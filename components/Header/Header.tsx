@@ -3,6 +3,7 @@
 import Link from "next/link";
 import MiniNav from "./MiniNav";
 import { usePathname } from "next/navigation";
+import { v4 as uuid } from 'uuid';
 
 const Header: React.FC = () => {
   const pathname = usePathname();
@@ -11,8 +12,65 @@ const Header: React.FC = () => {
     event.preventDefault();
   };
 
+  const navLink = [
+    {
+      href: "/candidats",
+      name: "Candidats",
+    },
+    {
+      href: "/clients",
+      name: "Clients",
+    },
+    {
+      href: "/fournisseurs",
+      name: "Fournisseurs",
+    },
+    {
+      href: "/a-propos",
+      name: "À Propos",
+    },
+  ];
+
   return (
-    <header className="w-[1240px] h-[133px] border-white border-2 mx-auto">
+    <header className="w-[1240px] h-[133px] border-white/10 border-b-[1.2px] mx-auto relative">
+      <Link
+        href={"/"}
+        className="absolute inset-0 flex items-center justify-center"
+      >
+        <img src="/img/header/logo.webp" width={112} height={67} alt="" />
+      </Link>
+
+      <div className="w-[132px] h-[39px] absolute inset-0 flex items-center my-auto gap-7">
+        <button
+          className="w-[18px] h-[18px] flex-shrink-0"
+          onClick={handleHamburger}
+        >
+          <img
+            className="mx-auto w-[18px] h-[18px]"
+            src="/img/header/hamburger.webp"
+            alt=""
+          />
+        </button>
+        <div className="w-[114px] h-[18px] flex gap-3 items-center">
+          <img
+            className="w-[14px] h-[14px]"
+            src="/img/header/mail.webp"
+            alt=""
+          />
+          <span className="text-primary text-sm">Contact</span>
+        </div>
+      </div>
+
+      <ul className="absolute inset-0 flex items-end justify-center gap-7 translate-y-[1px]">
+        {navLink.map((link) => (
+          <li key={uuid()} className={`pb-3 border-b-2 ${pathname === link.href ? "text-accent border-accent" : "text-white border-transparent hover:text-accent"}`}>
+            <Link href={link.href}>
+              <span className="text-md">{link.name}</span>
+            </Link>
+          </li>
+        ))}
+      </ul>
+
       <div className=" w-[365px] h-[58px] ml-auto">
         <div className="grid grid-cols-4 rounded-b-md h-full w-full overflow-hidden">
           <MiniNav
@@ -28,7 +86,7 @@ const Header: React.FC = () => {
             desc={"Accessibilité"}
           />
           <MiniNav
-            href={`${pathname}#`}
+            href={`/${pathname}#`}
             img={"/img/header/cookie.webp"}
             imgSize={{ width: "13px", height: "13px" }}
             desc={"Cookies"}
@@ -50,22 +108,6 @@ const Header: React.FC = () => {
           </a>
         </div>
       </div>
-      <div className="grid grid-cols-2 w-[132px] h-[39px] items-center">
-        <button
-          className="w-[18px] h-[18px]"
-          onClick={handleHamburger}
-        >
-          <img className="mx-auto w-[18px] h-[18px]" src="/img/header/hamburger.webp" alt="" />
-        </button>
-        <div className="w-[114px] h-[18px] ml-[3rem] flex gap-3 items-center">
-          <img className="w-[14px] h-[14px]" src="/img/header/mail.webp"alt="" />
-          <span className="text-primary text-sm">Contact</span>
-        </div>
-      </div>
-
-      <Link href={"/"} className="left-8">
-        <img src="/img/header/logo.webp" width={112} height={67} alt="" />
-      </Link>
     </header>
   );
 };
