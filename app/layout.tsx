@@ -12,7 +12,7 @@ export default function RootLayout({
 
   return (
     <html lang="fr">
-      <body className="bg-background w-[1240px] mx-auto flex flex-col">
+      <body className="bg-background mx-auto mobile:w-full desktop:w-[1240px]">
         <Header />
         <span className="ml-[35px] mt-[33px] text-white text-sm capitalize">{`Accueil > ${pathname}`}</span>
         <main>{children}</main>

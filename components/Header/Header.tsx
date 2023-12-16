@@ -32,46 +32,8 @@ const Header: React.FC = () => {
   ];
 
   return (
-    <header className="w-[1240px] h-[133px] border-white/10 border-b-[1.2px] mx-auto relative">
-      <Link
-        href={"/"}
-        className="absolute inset-0 flex items-center justify-center"
-      >
-        <img src="/img/header/logo.webp" width={112} height={67} alt="" />
-      </Link>
-
-      <div className="w-[132px] h-[39px] absolute inset-0 flex items-center my-auto gap-7">
-        <button
-          className="w-[18px] h-[18px] flex-shrink-0"
-          onClick={handleHamburger}
-        >
-          <img
-            className="mx-auto w-[18px] h-[18px]"
-            src="/img/header/hamburger.webp"
-            alt=""
-          />
-        </button>
-        <div className="w-[114px] h-[18px] flex gap-3 items-center">
-          <img
-            className="w-[14px] h-[14px]"
-            src="/img/header/mail.webp"
-            alt=""
-          />
-          <span className="text-primary text-sm">Contact</span>
-        </div>
-      </div>
-
-      <ul className="absolute inset-0 flex items-end justify-center gap-7 translate-y-[1px]">
-        {navLink.map((link) => (
-          <li key={uuid()} className={`pb-3 border-b-2 ${pathname === link.href ? "text-accent border-accent" : "text-white border-transparent hover:text-accent"}`}>
-            <Link href={link.href}>
-              <span className="text-md">{link.name}</span>
-            </Link>
-          </li>
-        ))}
-      </ul>
-
-      <div className=" w-[365px] h-[58px] ml-auto">
+    <header className="border-white/10 border-b-[1.2px] mx-auto relative mobile:w-full desktop:w-[1240px] desktop:h-[130px] mobile:h-[190px]">
+      <div className="h-[60px] desktop:w-[365px] desktop:ml-auto mobile:w-full">
         <div className="grid grid-cols-4 rounded-b-md h-full w-full overflow-hidden">
           <MiniNav
             href={"/green-it"}
@@ -102,12 +64,52 @@ const Header: React.FC = () => {
               width={"20px"}
               alt={""}
             />
-            <span className="my-auto text-white text-xs font-medium">
+            <span className="my-auto text-white text-sm font-semibold">
               International
             </span>
           </a>
         </div>
       </div>
+
+      <Link
+        href={"/"}
+        className="absolute inset-0 flex items-center justify-center"
+      >
+        <img src="/img/header/logo.webp" width={112} height={67} alt="" />
+      </Link>
+
+      <div className="w-[135px] h-[40px] absolute inset-0 flex items-center my-auto gap-7 mobile:ml-2 desktop:ml-0">
+        <button
+          className="w-[18px] h-[18px] flex-shrink-0"
+          onClick={handleHamburger}
+        >
+          <img
+            className="mx-auto w-[18px] h-[18px]"
+            src="/img/header/hamburger.webp"
+            alt=""
+          />
+        </button>
+        <div className="w-[115px] h-[20px] flex gap-3 items-center">
+          <img
+            className="w-[14px] h-[14px]"
+            src="/img/header/mail.webp"
+            alt=""
+          />
+          <span className="text-primary text-sm">Contact</span>
+        </div>
+      </div>
+
+      <ul className="absolute inset-0 flex items-end justify-center gap-7 translate-y-[1px]">
+        {navLink.map((link) => (
+          <li key={uuid()} className={`pb-3 border-b-2 ${pathname === link.href ? "text-accent border-accent" : "text-white border-transparent hover:text-accent"}`}>
+            <Link href={link.href}>
+              <span className="text-md">{link.name}</span>
+            </Link>
+          </li>
+        ))}
+      </ul>
+
+      
     </header>
   );
 };
