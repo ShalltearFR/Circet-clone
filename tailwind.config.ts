@@ -9,8 +9,9 @@ const config: Config = {
   theme: {
     extend: {
       screens: {
-        mobile: "480px",
-        tablet: "992px",
+        mobile: "1px",
+        tablet: "480px",
+        laptop: "990px",
         desktop: "1240px",
       },
       colors: {
@@ -23,6 +24,9 @@ const config: Config = {
         "second-background": "#ebebec", //blanc-gris
         "third-background": "#1c1c1c", //Noir-gris
       },
+      borderRadius: {
+        'header': '0 15rem 15rem 0',
+      }
     },
   },
   plugins: [],

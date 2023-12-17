@@ -1,20 +1,22 @@
-import type { Metadata } from 'next'
+import Header from "@/components/Header/Header";
+import type { Metadata } from "next";
 export const metadata: Metadata = {
-  title: 'Carrière - Circet Clone',
-  description: 'Description page candidats',
-}
+  title: "Carrière - Circet Clone",
+  description: "Description page candidats",
+};
 
-interface CandidatsProps {
-  // Add any props with their types here
-}
-
-const Candidats: React.FC<CandidatsProps> = (props) => {
-  // You can use props with their specified types here
-
+const Candidats: React.FC = () => {
   return (
-    <div>
-      
-    </div>
+    <>
+      <Header
+        mobileImg="/img/Candidats/header_mobile.webp"
+        tabletImg="/img/Candidats/header_tablet.webp"
+        desc="Ceci n'est pas le réel site de Circet"
+      />
+      <article>
+        
+      </article>
+    </>
   );
 };
 
