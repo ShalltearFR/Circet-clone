@@ -9,8 +9,9 @@ const config: Config = {
   theme: {
     extend: {
       screens: {
-        mobile: "1px",
-        tablet: "480px",
+        mobile: "480px",
+        tablet: "550px",
+        "big-tablet": "770px",
         laptop: "990px",
         desktop: "1240px",
       },

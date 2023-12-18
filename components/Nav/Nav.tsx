@@ -3,7 +3,6 @@
 import Link from "next/link";
 import MiniNav from "./MiniNav";
 import { usePathname } from "next/navigation";
-import { v4 as uuid } from "uuid";
 
 const Nav: React.FC = () => {
   const pathname = usePathname();
@@ -32,8 +31,8 @@ const Nav: React.FC = () => {
   ];
 
   return (
-    <nav className="border-white/10 border-b-[1.2px] mx-auto relative mobile:w-full desktop:w-[1240px] desktop:h-[130px] mobile:h-[190px]">
-      <div className="h-[60px] desktop:w-[365px] desktop:ml-auto mobile:w-full">
+    <nav className="border-white/10 border-b-[1.2px] mx-auto relative w-full desktop:w-[1240px] desktop:h-[130px] h-[190px]">
+      <div className="h-[60px] desktop:w-[365px] desktop:ml-auto w-full">
         <div className="grid grid-cols-4 h-full w-full desktop:rounded-b-md overflow-hidden">
           <MiniNav
             href={"/green-it"}
@@ -78,7 +77,7 @@ const Nav: React.FC = () => {
         <img src="/img/header/logo.webp" width={112} height={67} alt="" />
       </Link>
 
-      <div className="w-[135px] h-[40px] absolute inset-0 flex items-center my-auto gap-7 mobile:ml-2 desktop:ml-0">
+      <div className="w-[135px] h-[40px] absolute inset-0 flex items-center my-auto gap-7 ml-2 desktop:ml-0">
         <button
           className="w-[18px] h-[18px] flex-shrink-0"
           onClick={handleHamburger}
@@ -89,7 +88,7 @@ const Nav: React.FC = () => {
             alt=""
           />
         </button>
-        <div className="w-[115px] h-[20px] gap-3 items-center mobile:hidden desktop:flex">
+        <div className="w-[115px] h-[20px] gap-3 items-center hidden desktop:flex">
           <img
             className="w-[14px] h-[14px]"
             src="/img/header/mail.webp"
@@ -102,7 +101,7 @@ const Nav: React.FC = () => {
       <ul className="absolute inset-0 flex items-end justify-center gap-7 translate-y-[1px]">
         {navLink.map((link) => (
           <li
-            key={uuid()}
+            key={crypto.randomUUID()}
             className={`pb-3 border-b-2 ${
               pathname === link.href
                 ? "text-accent border-accent"
