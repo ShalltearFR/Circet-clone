@@ -9,15 +9,12 @@ const Header: React.FC<HeaderProps> = ({ mobileImg, tabletImg, desc }) => {
       <div className="relative w-full h-full">
         <picture className="w-full h-full">
           <source media="(max-width: 989px)" srcSet={mobileImg} />
-
           <source media="(min-width: 990px)" srcSet={tabletImg} />
-
           <img
             className="w-full h-auto object-cover object-left max-h-full overflow-hidden rounded-header"
             src={tabletImg}
             width={1240}
             height={421}
-            alt=""
           />
         </picture>
       </div>

@@ -61,7 +61,6 @@ const Nav: React.FC = () => {
               className="mx-auto"
               src={"/img/header/building.webp"}
               width={"20px"}
-              alt={""}
             />
             <span className="my-auto text-white text-sm font-semibold">
               International
@@ -74,7 +73,7 @@ const Nav: React.FC = () => {
         href={"/"}
         className="absolute inset-0 flex items-center justify-center"
       >
-        <img src="/img/header/logo.webp" width={112} height={67} alt="" />
+        <img src="/img/header/logo.webp" width={112} height={67}/>
       </Link>
 
       <div className="w-[135px] h-[40px] absolute inset-0 flex items-center my-auto gap-7 ml-2 desktop:ml-0">
@@ -85,15 +84,10 @@ const Nav: React.FC = () => {
           <img
             className="mx-auto w-[18px] h-[18px]"
             src="/img/header/hamburger.webp"
-            alt=""
           />
         </button>
         <div className="w-[115px] h-[20px] gap-3 items-center hidden desktop:flex">
-          <img
-            className="w-[14px] h-[14px]"
-            src="/img/header/mail.webp"
-            alt=""
-          />
+          <img className="w-[14px] h-[14px]" src="/img/header/mail.webp" />
           <span className="text-primary text-sm">Contact</span>
         </div>
       </div>
