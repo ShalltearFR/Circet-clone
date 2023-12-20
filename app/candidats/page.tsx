@@ -17,7 +17,7 @@ const Candidats: React.FC = () => {
         desc="Ceci n'est pas le site officiel de Circet France"
       />
       <article>
-        <section className="bg-second-background py-11 px-4 big-tablet:p-11 rounded-xl">
+        <section className="bg-second-background py-11 px-4 big-tablet:p-11 desktop:rounded-xl">
           <h2 className="text-center text-[2.2rem] font-medium mb-11">
             Circet France en bref
           </h2>
@@ -93,6 +93,36 @@ const Candidats: React.FC = () => {
               other="Eysines, Gironde"
             />
           </div>
+        </section>
+
+        <section className="mt-16 bg-second-background desktop:rounded-xl py-11 px-4 big-tablet:p-11">
+          <h2 className="text-center text-secondary text-[2.2rem] font-medium mb-4">
+            Nos métiers
+          </h2>
+          <p className="font-light text-lg mb-8 text-center">
+            Étudiants, jeunes diplômés/actifs, profils expérimentés... Quelle
+            que soit votre expérience, Circet France vous donne votre chance !
+          </p>
+          <HGrid
+            colors={{ title: "text-accent", desc: "text-black" }}
+            data={[
+              {
+                imageSrc: "/img/Candidats/CSM.webp",
+                title: "Réseaux télécoms",
+                desc: "Des métiers de terrain ou en agence, pour assurer le déploiement et la maintenance des infrastructures télécoms fixes et mobiles.",
+              },
+              {
+                imageSrc: "/img/Candidats/transition_energetique.webp",
+                title: "Transition énergétique",
+                desc: "De nouveaux métiers d'avenir, pour répondre aux besoins exponentiels en gestion durable de l'énergie et recharge de véhicules électriques.",
+              },
+              {
+                imageSrc: "/img/Candidats/IMG_7144.webp",
+                title: "Fonctions support",
+                desc: "Des fonctions métier ou transversales, pour accompagner les équipes opérationnelles dans leurs missions au quotidien.",
+              },
+            ]}
+          />
         </section>
       </article>
     </>
