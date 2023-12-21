@@ -1,8 +1,9 @@
 import Commentary from "@/components/Commentary/Commentary";
 import Header from "@/components/Header/Header";
-import HGrid from "@/components/HGrid/HGrid";
+import Cards from "@/components/Cards/Cards";
 import type { Metadata } from "next";
 import Link from "next/link";
+import Flex from "@/components/Flex/Flex";
 export const metadata: Metadata = {
   title: "Carrière - Circet Clone",
   description: "Description page candidats",
@@ -18,10 +19,10 @@ const Candidats: React.FC = () => {
       />
       <article>
         <section className="bg-second-background py-11 px-4 big-tablet:p-11 desktop:rounded-xl">
-          <h2 className="text-center text-[2.2rem] font-medium mb-11">
+          <h2 className="text-secondary text-center text-[2rem] font-semibold mb-11">
             Circet France en bref
           </h2>
-          <HGrid
+          <Cards
             colors={{ title: "text-accent", desc: "text-black" }}
             data={[
               {
@@ -42,7 +43,7 @@ const Candidats: React.FC = () => {
             ]}
           />
 
-          <p className="mt-12 text-center underline underline-offset-2 hover:no-underline">
+          <p className="mt-12 text-center text-secondary underline underline-offset-2 hover:no-underline">
             <Link href={"/a-propos"} className="py-2 px-6">
               <img
                 src="/img/Candidats/right-arrow.webp"
@@ -56,10 +57,10 @@ const Candidats: React.FC = () => {
         </section>
 
         <section className="mt-16 px-8 desktop:px-36">
-          <h2 className="text-center text-primary text-[2.2rem] font-medium mb-11">
+          <h2 className="text-center text-[2.2rem] font-medium mb-11">
             Pourquoi rejoindre Circet France ?
           </h2>
-          <HGrid
+          <Cards
             alternative
             colors={{ title: "text-primary", desc: "text-primary" }}
             data={[
@@ -95,15 +96,15 @@ const Candidats: React.FC = () => {
           </div>
         </section>
 
-        <section className="mt-16 bg-second-background desktop:rounded-xl py-11 px-4 big-tablet:p-11">
+        <section className="mt-16 bg-second-background py-11 px-4 desktop:rounded-xl big-tablet:p-11">
           <h2 className="text-center text-secondary text-[2.2rem] font-medium mb-4">
             Nos métiers
           </h2>
-          <p className="font-light text-lg mb-8 text-center">
+          <p className="text-secondary font-light text-lg mb-8 text-center">
             Étudiants, jeunes diplômés/actifs, profils expérimentés... Quelle
             que soit votre expérience, Circet France vous donne votre chance !
           </p>
-          <HGrid
+          <Cards
             colors={{ title: "text-accent", desc: "text-black" }}
             data={[
               {
@@ -124,6 +125,50 @@ const Candidats: React.FC = () => {
             ]}
           />
         </section>
+
+        <section className="mt-16 w-full desktop:w-4/5 mx-auto px-8">
+          <h2 className="text-4xl font-semibold mb-7">Formation</h2>
+          <Flex column className="gap-y-20 big-tablet:flex-row desktop:gap-x-5">
+            <div className="text-accent flex-1">
+              <h3 className="text-3xl font-semibold text-center mx-auto mb-9 px-2">
+                {"Développer vos compétences au service de l'excellence"}
+              </h3>
+              <Flex
+                column
+                className={
+                  `text-2xl font-bold text-center ` +
+                  `[&>*:nth-child(odd)]:text-primary [&>*:nth-child(odd)]:text-4xl ` +
+                  `[&>*:nth-child(even)]:mb-5 [&>*:last-child]:!mb-0`
+                }
+              >
+                <span>9</span>
+                <span>CENTRES DE FORMATION</span>
+                <span>43</span>
+                <span>EXPERTS MÉTIER</span>
+                <span>94 %</span>
+                <span>TAUX DE SATISFACTION 2022</span>
+              </Flex>
+            </div>
+
+            <Flex column flex1 className="gap-y-20">
+              <img
+                src="/img/Candidats/Qualiopi.webp"
+                className="max-w-md mx-auto"
+              />
+              <Link href={"candidats/formation"}>
+                <span className="bg-accent text-sm font-bold px-6 py-2 m-auto text-center w-fit rounded-full">
+                  En savoir plus sur la formation
+                  <img
+                    src="/img/Candidats/right-arrow-white.svg"
+                    className="inline ml-1"
+                  />
+                </span>
+              </Link>
+            </Flex>
+          </Flex>
+        </section>
+
+        <section className="mt-14"></section>
       </article>
     </>
   );

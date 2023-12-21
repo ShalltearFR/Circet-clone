@@ -1,4 +1,3 @@
-/* eslint-disable @next/next/no-img-element */
 "use client";
 import Link from "next/link";
 import MiniNav from "./MiniNav";
@@ -32,34 +31,34 @@ const Nav: React.FC = () => {
 
   return (
     <nav className="border-white/10 border-b-[1.2px] mx-auto relative w-full desktop:w-[1240px] desktop:h-[130px] h-[190px]">
-      <div className="h-[60px] desktop:w-[365px] desktop:ml-auto w-full">
-        <div className="grid grid-cols-4 h-full w-full desktop:rounded-b-md overflow-hidden">
+      <div className="h-[60px] desktop:w-fit desktop:ml-auto w-full">
+        <div className="flex h-full w-full desktop:rounded-b-md overflow-hidden">
           <MiniNav
             href={"/green-it"}
-            img={"/img/header/leaf.webp"}
+            img={"/img/Nav/leaf.webp"}
             imgSize={{ width: "10px", height: "10px" }}
             desc={"Green IT"}
           />
           <MiniNav
             href={"/accessibilite"}
-            img={"/img/header/eye.webp"}
+            img={"/img/Nav/eye.webp"}
             imgSize={{ width: "20px", height: "14px" }}
             desc={"Accessibilité"}
           />
           <MiniNav
             href={`/${pathname}#`}
-            img={"/img/header/cookie.webp"}
+            img={"/img/Nav/cookie.webp"}
             imgSize={{ width: "13px", height: "13px" }}
             desc={"Cookies"}
           />
           <a
             href={"https://www.circet.com/"}
-            className="grid grid-rows-[30px,20px] items-end justify-center h-full bg-accent ml-2"
+            className="grid grid-rows-[30px,20px] text-center items-end justify-center h-full bg-accent ml-2 px-3 w-full"
             target="_blank"
           >
             <img
               className="mx-auto"
-              src={"/img/header/building.webp"}
+              src={"/img/Nav/building.webp"}
               width={"20px"}
             />
             <span className="my-auto text-white text-sm font-semibold">
@@ -73,7 +72,12 @@ const Nav: React.FC = () => {
         href={"/"}
         className="absolute inset-0 flex items-center justify-center"
       >
-        <img src="/img/header/logo.webp" width={112} height={67}/>
+        <img
+          src="/img/Nav/logo.webp"
+          width={112}
+          height={67}
+          className="z-10"
+        />
       </Link>
 
       <div className="w-[135px] h-[40px] absolute inset-0 flex items-center my-auto gap-7 ml-2 desktop:ml-0">
@@ -83,11 +87,11 @@ const Nav: React.FC = () => {
         >
           <img
             className="mx-auto w-[18px] h-[18px]"
-            src="/img/header/hamburger.webp"
+            src="/img/Nav/hamburger.webp"
           />
         </button>
         <div className="w-[115px] h-[20px] gap-3 items-center hidden desktop:flex">
-          <img className="w-[14px] h-[14px]" src="/img/header/mail.webp" />
+          <img className="w-[14px] h-[14px]" src="/img/Nav/mail.webp" />
           <span className="text-primary text-sm">Contact</span>
         </div>
       </div>
@@ -96,7 +100,7 @@ const Nav: React.FC = () => {
         {navLink.map((link) => (
           <li
             key={crypto.randomUUID()}
-            className={`pb-3 border-b-2 ${
+            className={`pb-3 border-b-2 text-sm font-medium ${
               pathname === link.href
                 ? "text-accent border-accent"
                 : "text-white border-transparent hover:text-accent"

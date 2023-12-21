@@ -8,14 +8,18 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  const pathname = usePathname().slice(1).replaceAll("-", " ");
+  const pathname = usePathname()
+    .replaceAll("-", " ")
+    .split("/")
+    .map((word) => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase())
+    .join(" > ");
 
   return (
     <html lang="fr">
       <body className="bg-background mx-auto tablet:w-full desktop:w-[1240px]">
         <Nav />
-        <div className="ml-[35px] mt-[33px] mb-[10px] text-white text-sm capitalize">{`Accueil > ${pathname}`}</div>
-        <main>{children}</main>
+        <div className="ml-[35px] mt-[33px] mb-[10px] text-white text-sm">{`Accueil${pathname}`}</div>
+        <main className="text-primary">{children}</main>
       </body>
     </html>
   );
