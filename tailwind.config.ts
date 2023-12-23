@@ -7,14 +7,13 @@ const config: Config = {
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
+    screens: {
+      sm: "580px",
+      md: "780px",
+      lg: "990px",
+      xl: "1240px",
+    },
     extend: {
-      screens: {
-        mobile: "480px",
-        tablet: "580px",
-        "big-tablet": "780px",
-        laptop: "990px",
-        desktop: "1240px",
-      },
       colors: {
         primary: "white",
         secondary: "black",
@@ -31,5 +30,6 @@ const config: Config = {
     },
   },
   plugins: [],
+  jit: true,
 };
 export default config;

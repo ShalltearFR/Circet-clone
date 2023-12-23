@@ -1,5 +1,6 @@
 import Link from "next/link";
-import Flex from "../Flex/Flex";
+import Flex from "../StyledElement/Flex";
+import { Div } from "../StyledElement/StyledElement";
 
 interface CommentaryProps {
   image: { src: string; href: string; blank: boolean };
@@ -16,12 +17,10 @@ const Commentary: React.FC<CommentaryProps> = ({
   return (
     <Flex
       column
-      className={
-        `bg-commentary text-secondary p-8 rounded-xl mx-auto items-center ` +
-        `big-tablet:px-8 big-tablet:max-w-[620px] big-tablet:flex-row big-tablet:rounded-full`
-      }
+      xs="bg-commentary text-secondary p-8 rounded-xl mx-auto items-center"
+      md="md:px-8 md:max-w-[620px] md:flex-row md:rounded-full"
     >
-      <div className="mb-5 big-tablet:mb-0 flex-shrink-0 relative ">
+      <Div xs="mb-5 flex-shrink-0 relative" md="md:mb-0">
         <img
           src="/img/Candidats/quotes.png"
           className="absolute left-20 bottom-28"
@@ -36,15 +35,15 @@ const Commentary: React.FC<CommentaryProps> = ({
             className="rounded-full m-auto w-full h-auto z-10"
           />
         </Link>
-      </div>
-      <div className="big-tablet:ml-3 laptop:ml-7">
+      </Div>
+      <Div md="md:ml-3" lg="lg:ml-7">
         <blockquote className="mb-3">{desc}</blockquote>
         <div className="text-sm">
           <span>{source.name}, </span>
           <span className="font-semibold">{source.job}</span>
         </div>
         <p className="text-sm italic">{other}</p>
-      </div>
+      </Div>
     </Flex>
   );
 };

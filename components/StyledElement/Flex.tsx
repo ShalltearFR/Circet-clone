@@ -1,6 +1,6 @@
-import { Tw } from "@/types/tailwindest";
+import { StyledElementProps } from "./StyledElement";
 
-interface FlexProps {
+type FlexProps = {
   column?: boolean;
   row?: boolean;
   rowReverse?: boolean;
@@ -15,10 +15,11 @@ interface FlexProps {
   flex1?: boolean;
   flexAuto?: boolean;
   flexNone?: boolean;
-  className?: string;
   style?: React.CSSProperties;
   children: React.ReactNode;
-}
+} & StyledElementProps;
+
+
 const Flex: React.FC<FlexProps> = ({
   column,
   row,
@@ -34,9 +35,15 @@ const Flex: React.FC<FlexProps> = ({
   flex1,
   flexAuto,
   flexNone,
-  className,
+  xs,
+  sm,
+  md,
+  lg,
+  xl,
   children,
 }) => {
+  const classNames = `${xs ?? ""} ${sm ?? ""} ${md ?? ""} ${lg ?? ""} ${xl ?? ""}`;
+
   return (
     <div
       className={`flex${column ? " flex-col" : ""}${row ? " flex-row" : ""}${
@@ -49,7 +56,7 @@ const Flex: React.FC<FlexProps> = ({
         noWrap ? " flex-nowrap" : ""
       }${flex1 ? " flex-1" : ""}${flexAuto ? " flex-auto" : ""}${
         flexNone ? " flex-none" : ""
-      } ${className ? className : ""}
+      } ${classNames}
     `}
     >
       {children}

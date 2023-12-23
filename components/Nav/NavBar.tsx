@@ -2,8 +2,10 @@
 import Link from "next/link";
 import MiniNav from "./MiniNav";
 import { usePathname } from "next/navigation";
+import { Div, Nav } from "../StyledElement/StyledElement";
+import Flex from "../StyledElement/Flex";
 
-const Nav: React.FC = () => {
+const NavBar: React.FC = () => {
   const pathname = usePathname();
 
   const handleHamburger = (event: React.MouseEvent<HTMLElement>) => {
@@ -30,9 +32,12 @@ const Nav: React.FC = () => {
   ];
 
   return (
-    <nav className="border-white/10 border-b-[1.2px] mx-auto relative w-full desktop:w-[1240px] desktop:h-[130px] h-[190px]">
-      <div className="h-[60px] desktop:w-fit desktop:ml-auto w-full">
-        <div className="flex h-full w-full desktop:rounded-b-md overflow-hidden">
+    <Nav
+      xs={"border-white/10 border-b-[1.2px] mx-auto relative w-full h-[190px]"}
+      xl={`xl:w-[1240px] xl:h-[130px]`}
+    >
+      <Div xs={"h-[60px] w-full"} xl={"xl:w-fit xl:ml-auto"}>
+        <Flex xs="h-full w-full overflow-hidden" xl="xl:rounded-b-md">
           <MiniNav
             href={"/green-it"}
             img={"/img/Nav/leaf.webp"}
@@ -65,8 +70,8 @@ const Nav: React.FC = () => {
               International
             </span>
           </a>
-        </div>
-      </div>
+        </Flex>
+      </Div>
 
       <Link
         href={"/"}
@@ -80,7 +85,10 @@ const Nav: React.FC = () => {
         />
       </Link>
 
-      <div className="w-[135px] h-[40px] absolute inset-0 flex items-center my-auto gap-7 ml-2 desktop:ml-0">
+      <Flex
+        xs="w-[135px] h-[40px] absolute inset-0 items-center my-auto gap-7 ml-2"
+        xl="xl:ml-0"
+      >
         <button
           className="w-[18px] h-[18px] flex-shrink-0"
           onClick={handleHamburger}
@@ -90,11 +98,11 @@ const Nav: React.FC = () => {
             src="/img/Nav/hamburger.webp"
           />
         </button>
-        <div className="w-[115px] h-[20px] gap-3 items-center hidden desktop:flex">
+        <Div xs="w-[115px] h-[20px] gap-3 items-center hidden" xl="xl:flex">
           <img className="w-[14px] h-[14px]" src="/img/Nav/mail.webp" />
           <span className="text-primary text-sm">Contact</span>
-        </div>
-      </div>
+        </Div>
+      </Flex>
 
       <ul className="absolute inset-0 flex items-end justify-center gap-7 translate-y-[1px]">
         {navLink.map((link) => (
@@ -112,8 +120,8 @@ const Nav: React.FC = () => {
           </li>
         ))}
       </ul>
-    </nav>
+    </Nav>
   );
 };
 
-export default Nav;
+export default NavBar;

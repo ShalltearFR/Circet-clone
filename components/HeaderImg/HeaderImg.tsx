@@ -1,11 +1,21 @@
-interface HeaderProps {
+import { H1, Header } from "../StyledElement/StyledElement";
+
+interface HeaderImgProps {
   mobileImg: string;
   tabletImg: string;
   desc: string;
 }
-const Header: React.FC<HeaderProps> = ({ mobileImg, tabletImg, desc }) => {
+const HeaderImg: React.FC<HeaderImgProps> = ({
+  mobileImg,
+  tabletImg,
+  desc,
+}) => {
   return (
-    <header className="relative h-auto mr-5 tablet:text-center mb-[60px] laptop:mr-0">
+    <Header
+      xs="relative h-auto mr-5 mb-[60px]"
+      md="md:text-center"
+      lg="lg:mr-0"
+    >
       <div className="relative w-full h-full">
         <picture className="w-full h-full">
           <source media="(max-width: 989px)" srcSet={mobileImg} />
@@ -19,19 +29,19 @@ const Header: React.FC<HeaderProps> = ({ mobileImg, tabletImg, desc }) => {
         </picture>
       </div>
 
-      <h1
-        className={
+      <H1
+        xs={
           `absolute font-semibold left-1/2 ml-2 text-2xl w-full z-10 [text-shadow:_0_2px_2px_rgb(0_0_0_/_40%)] ` +
-          `transform -translate-x-1/2 -translate-y-1/2 top-3/4 ` +
-          `tablet:ml-0 tablet:text-5xl tablet:w-4/5 ` +
-          `laptop:text-5xl laptop:top-1/2 laptop:w-3/4 ` +
-          `desktop:w-2/3 desktop:text-[54px]`
+          `transform -translate-x-1/2 -translate-y-1/2 top-3/4`
         }
+        sm="sm:ml-0 sm:text-5xl sm:w-4/5"
+        lg="lg:text-5xl lg:top-1/2 lg:w-3/4"
+        xl="xl:w-2/3 xl:text-[54px]"
       >
         {desc}
-      </h1>
-    </header>
+      </H1>
+    </Header>
   );
 };
 
-export default Header;
+export default HeaderImg;

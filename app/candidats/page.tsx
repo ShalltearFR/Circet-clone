@@ -1,9 +1,11 @@
 import Commentary from "@/components/Commentary/Commentary";
-import Header from "@/components/Header/Header";
+import HeaderImg from "@/components/HeaderImg/HeaderImg";
 import Cards from "@/components/Cards/Cards";
 import type { Metadata } from "next";
 import Link from "next/link";
-import Flex from "@/components/Flex/Flex";
+import Flex from "@/components/StyledElement/Flex";
+import { Div, Section } from "@/components/StyledElement/StyledElement";
+
 export const metadata: Metadata = {
   title: "Carrière - Circet Clone",
   description: "Description page candidats",
@@ -12,13 +14,17 @@ export const metadata: Metadata = {
 const Candidats: React.FC = () => {
   return (
     <>
-      <Header
+      <HeaderImg
         mobileImg="/img/Candidats/header_mobile.webp"
         tabletImg="/img/Candidats/header_tablet.webp"
         desc="Ceci n'est pas le site officiel de Circet France"
       />
       <article>
-        <section className="bg-second-background py-11 px-4 big-tablet:p-11 desktop:rounded-xl">
+        <Section
+          xs="bg-second-background py-11 px-4"
+          md="md:p-11"
+          xl="xl:rounded-xl"
+        >
           <h2 className="text-secondary text-center text-[2rem] font-semibold mb-11">
             Circet France en bref
           </h2>
@@ -54,9 +60,9 @@ const Candidats: React.FC = () => {
               </span>
             </Link>
           </p>
-        </section>
+        </Section>
 
-        <section className="mt-16 px-8 desktop:px-36">
+        <Section xs="mt-16 px-8" xl="xl:px-36">
           <h2 className="text-center text-[2.2rem] font-medium mb-11">
             Pourquoi rejoindre Circet France ?
           </h2>
@@ -82,7 +88,7 @@ const Candidats: React.FC = () => {
             ]}
           />
 
-          <div className="mt-16">
+          <Div xs="mt-16">
             <Commentary
               image={{
                 src: "/img/Candidats/conductrice_de_travaux.webp",
@@ -93,10 +99,14 @@ const Candidats: React.FC = () => {
               source={{ name: "Mélanie", job: "Conductrice de travaux" }}
               other="Eysines, Gironde"
             />
-          </div>
-        </section>
+          </Div>
+        </Section>
 
-        <section className="mt-16 bg-second-background py-11 px-4 desktop:rounded-xl big-tablet:p-11">
+        <Section
+          xs="mt-16 bg-second-background py-11 px-4"
+          md="md:p-11"
+          xl="xl:rounded-xl"
+        >
           <h2 className="text-center text-secondary text-[2.2rem] font-medium mb-4">
             Nos métiers
           </h2>
@@ -124,18 +134,18 @@ const Candidats: React.FC = () => {
               },
             ]}
           />
-        </section>
+        </Section>
 
-        <section className="mt-16 w-full desktop:w-4/5 mx-auto px-8">
+        <Section xs="mt-16 w-full mx-auto px-8" xl="xl:w-4/5">
           <h2 className="text-4xl font-semibold mb-7">Formation</h2>
-          <Flex column className="gap-y-20 big-tablet:flex-row desktop:gap-x-5">
+          <Flex column xs="gap-y-20" md="md:flex-row" xl="xl:gap-x-5">
             <div className="text-accent flex-1">
               <h3 className="text-3xl font-semibold text-center mx-auto mb-9 px-2">
                 {"Développer vos compétences au service de l'excellence"}
               </h3>
               <Flex
                 column
-                className={
+                xs={
                   `text-2xl font-bold text-center ` +
                   `[&>*:nth-child(odd)]:text-primary [&>*:nth-child(odd)]:text-4xl ` +
                   `[&>*:nth-child(even)]:mb-5 [&>*:last-child]:!mb-0`
@@ -150,7 +160,7 @@ const Candidats: React.FC = () => {
               </Flex>
             </div>
 
-            <Flex column flex1 className="gap-y-20">
+            <Flex column flex1 xs="gap-y-20">
               <img
                 src="/img/Candidats/Qualiopi.webp"
                 className="max-w-md mx-auto"
@@ -166,9 +176,9 @@ const Candidats: React.FC = () => {
               </Link>
             </Flex>
           </Flex>
-        </section>
+        </Section>
 
-        <section className="mt-14"></section>
+        <Section xs="mt-14">a</Section>
       </article>
     </>
   );
