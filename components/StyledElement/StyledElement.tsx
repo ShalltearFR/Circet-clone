@@ -1,9 +1,13 @@
+import { Tw } from "@/types/tailwindest";
+
+type TailwindClassName = Tw[keyof Tw];
+
 interface StyledElementProps {
-  xs?: string;
-  sm?: string;
-  md?: string;
-  lg?: string;
-  xl?: string;
+  xs?: TailwindClassName | string;
+  sm?: TailwindClassName | string;
+  md?: TailwindClassName | string;
+  lg?: TailwindClassName | string;
+  xl?: TailwindClassName | string;
   children: React.ReactNode;
 }
 

@@ -7,10 +7,6 @@
   src: url("/fonts/Montserrat.ttf");
 }
 
-.reset-styles {
-  all: initial;
-}
-
 * {
   font-family: "Montserrat", Arial, sans-serif;
 }

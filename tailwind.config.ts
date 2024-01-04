@@ -23,13 +23,13 @@ const config: Config = {
         background: "#1a171b", //BG par defaut - Noir
         "second-background": "#ebebec", //blanc-gris
         "third-background": "#1c1c1c", //Noir-gris
+        "fourth-background": "#222", //Dark gray
       },
       borderRadius: {
         'header': '0 15rem 15rem 0',
       }
     },
   },
-  plugins: [],
-  jit: true,
+  plugins: []
 };
 export default config;

@@ -42,11 +42,11 @@ const Cards: React.FC<CardsProps> = ({
 }) => {
   return (
     <Div
-      xs={`grid gap-y-11 gap-x-4 ${alternative ? "w-full" : ""} ${
+      xs={`grid gap-y-11 gap-x-4 ${alternative ? "w-full" : "mx-auto"} ${
         background ? background : ""
       }`}
       md="md:grid-cols-3 md:text-justify md:gap-y-0"
-      lg={!alternative ? "lg:w-5/6 mx-auto" : ""}
+      lg={!alternative ? "lg:w-5/6" : ""}
     >
       {data.map((el) => (
         <Div

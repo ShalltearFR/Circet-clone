@@ -5,6 +5,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Flex from "@/components/StyledElement/Flex";
 import { Div, Section } from "@/components/StyledElement/StyledElement";
+import SearchContainer from "@/components/Search/SearchContainer";
 
 export const metadata: Metadata = {
   title: "Carrière - Circet Clone",
@@ -163,10 +164,10 @@ const Candidats: React.FC = () => {
             <Flex column flex1 xs="gap-y-20">
               <img
                 src="/img/Candidats/Qualiopi.webp"
-                className="max-w-md mx-auto"
+                className="max-w-md mx-auto w-full"
               />
-              <Link href={"candidats/formation"}>
-                <span className="bg-accent text-sm font-bold px-6 py-2 m-auto text-center w-fit rounded-full">
+              <Link href={"candidats/formation"} className="mx-auto">
+                <span className="bg-accent text-sm font-bold px-6 py-3 m-auto text-center w-fit rounded-full">
                   En savoir plus sur la formation
                   <img
                     src="/img/Candidats/right-arrow-white.svg"
@@ -178,7 +179,9 @@ const Candidats: React.FC = () => {
           </Flex>
         </Section>
 
-        <Section xs="mt-14">a</Section>
+        <Section xs="mt-14 bg-fourth-background px-4 py-11">
+          <SearchContainer />
+        </Section>
       </article>
     </>
   );

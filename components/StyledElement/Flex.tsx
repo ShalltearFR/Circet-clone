@@ -16,7 +16,6 @@ type FlexProps = {
   flexAuto?: boolean;
   flexNone?: boolean;
   style?: React.CSSProperties;
-  children: React.ReactNode;
 } & StyledElementProps;
 
 
