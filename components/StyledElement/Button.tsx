@@ -9,7 +9,6 @@ type ButtonProps = {
   imgSrc?: string;
   background: TailwindClassName | string;
   textColor: TailwindClassName | string;
-  onClick: any;
 } & StyledElementProps;
 
 const Button: React.FC<ButtonProps> = ({
