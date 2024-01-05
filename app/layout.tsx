@@ -16,7 +16,7 @@ export default function RootLayout({
     .join(" > ");
 
   return (
-    <html lang="fr">
+    <html lang="fr" suppressHydrationWarning={true}>
       <Body xs="bg-background mx-auto" sm="sm:w-full" xl="xl:w-[1240px]">
         <Nav />
         <div className="ml-[35px] mt-[33px] mb-[10px] text-white text-sm">{`Accueil${pathname}`}</div>
