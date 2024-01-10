@@ -39,7 +39,7 @@ const SearchContainer: React.FC<SearchContainerProps> = ({}) => {
         </label>
         <Div
           xs={
-            "text-center mx-3 my-3 mb-5 border border-neutral-600 border-dashed"
+            "text-center mx-3 my-3 mb-5 border border-tertiary border-dashed"
           }
           md={"md:w-3/4 md:mx-auto"}
           lg={"lg:w-2/4"}

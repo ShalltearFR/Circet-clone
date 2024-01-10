@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 import Commentary from "@/components/Commentary/Commentary";
 import HeaderImg from "@/components/HeaderImg/HeaderImg";
 import Cards from "@/components/Cards/Cards";
@@ -6,6 +7,7 @@ import Link from "next/link";
 import Flex from "@/components/StyledElement/Flex";
 import { Div, Section } from "@/components/StyledElement/StyledElement";
 import SearchContainer from "@/components/Search/SearchContainer";
+import Carousel from "@/components/Carousel/Carousel";
 
 export const metadata: Metadata = {
   title: "Carrière - Circet Clone",
@@ -179,8 +181,51 @@ const Candidats: React.FC = () => {
           </Flex>
         </Section>
 
-        <Section xs="mt-14 bg-fourth-background px-4 py-11">
+        <Section xs="mt-14 bg-fourth-background px-4 py-11" xl="xl:rounded-xl">
           <SearchContainer />
+        </Section>
+
+        <Section xs="mt-14 text-center">
+          <h2 className="text-3xl font-semibold mb-11">
+            Nos offres à l'affiche
+          </h2>
+          <div className="w-full md:w-2/4 h-80 mx-auto">
+            <Carousel
+              data={[
+                {
+                  imgSrc: "/img/Candidats/conducteur.webp",
+                  desc: "Conducteur de travaux Radio (H/F)",
+                  href: "/jobs/Jquy54MqiynBwut4",
+                },
+                {
+                  imgSrc: "/img/Candidats/electricien.webp",
+                  desc: "Electricien (H/F)",
+                  href: "/jobs/pqxy54MqbynBw5t3",
+                },
+              ]}
+            />
+            <div className="flex items-center underline text-sm font-semibold gap-3 justify-center mt-8 hover:no-underline">
+              <img src="/img/Candidats/carousel-right-arrow.webp" />
+              <Link href={"/candidats/offres"}>
+                Voir plus d'offres d'emploi
+              </Link>
+            </div>
+          </div>
+        </Section>
+
+        <Section
+          xs={"bg-second-background text-center mt-28 py-11"}
+          xl="xl:rounded-xl"
+        >
+          <div className="text-accent text-xl font-semibold w-4/5 mx-auto">
+            Aucune de nos offres actuelles ne correspond à votre recherche ?
+          </div>
+          <div className="flex items-center text-secondary underline text-sm font-semibold gap-3 justify-center mt-8 hover:no-underline">
+            <img src="/img/Candidats/right-arrow-black.svg" />
+            <Link href={"/candidats/Candidature-spontanee"}>
+              Envoyer votre candidature spontanée
+            </Link>
+          </div>
         </Section>
       </article>
     </>
