@@ -1,6 +1,7 @@
 import type { Config } from "tailwindcss";
+const withMT = require("@material-tailwind/react/utils/withMT");
 
-const config: Config = {
+const config: Config = withMT({
   content: [
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
@@ -29,7 +30,11 @@ const config: Config = {
         'header': '0 15rem 15rem 0',
       }
     },
+    boxShadow: {
+      'carousel': '0.8rem 0.4rem 0 #f17d00',
+    }
   },
   plugins: []
-};
+});
+
 export default config;
