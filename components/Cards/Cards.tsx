@@ -1,6 +1,8 @@
+import React from "react";
 import { Tw } from "@/types/tailwindest";
 import Flex from "../StyledElement/Flex";
 import { Div, H3, P } from "../StyledElement/StyledElement";
+import Link from "next/link";
 
 interface ParagraphData {
   /**
@@ -20,8 +22,8 @@ interface Colors {
    * @param title - Couleur tailwind
    * @param desc  - Couleur tailwind
    */
-  title: Tw["color"];
-  desc: Tw["color"];
+  title: Tw["color"] | string;
+  desc: Tw["color"] | string;
 }
 
 interface CardsProps {
@@ -34,12 +36,29 @@ interface CardsProps {
   alternative?: boolean;
 }
 
+interface TitleComponentProps {
+  href?: string;
+  children: React.ReactNode;
+}
+
+const TitleComponent: React.FC<TitleComponentProps> = ({ href, children }) =>
+  href ? (
+    <Link href={href}>{children}</Link>
+  ) : (
+    <React.Fragment>{children}</React.Fragment>
+  );
+
 const Cards: React.FC<CardsProps> = ({
   background,
   data,
   colors,
   alternative,
 }) => {
+  const commonTitleProps = {
+    xs: `text-xl font-semibold mb-[6px] ${colors.title}`,
+    md: "md:text-center",
+  };
+
   return (
     <Div
       xs={`grid gap-y-11 gap-x-4 ${alternative ? "w-full" : "mx-auto"} ${
@@ -60,15 +79,13 @@ const Cards: React.FC<CardsProps> = ({
         >
           <img
             src={el.imageSrc}
-            className={`sm:mx-auto md:mb-5 ${alternative ? "mx-auto" : ""}`}
+            className={`sm:mx-auto mb-5 ${alternative ? "mx-auto" : ""}`}
           />
           <Flex column xs={`justify-start`}>
-            <H3
-              xs={`text-xl font-semibold mb-[6px] ${colors.title}`}
-              md="md:text-center"
-            >
-              {el.title}
-            </H3>
+            <TitleComponent href={el.href}>
+              <H3 {...commonTitleProps}>{el.title}</H3>
+            </TitleComponent>
+
             <P xs={`text-sm leading-6 ${colors.desc}`} md="md:text-center">
               {el.desc}
             </P>

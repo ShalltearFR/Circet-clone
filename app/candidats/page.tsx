@@ -227,6 +227,72 @@ const Candidats: React.FC = () => {
             </Link>
           </div>
         </Section>
+
+        <Section xs={"mt-16 text-center px-5"}>
+          <h2 className="text-3xl font-semibold mb-4">
+            Environnement, Social & Gouvernance
+          </h2>
+          <p className="mb-8">
+            Circet France se mobilise pour améliorer ses pratiques ESG et
+            attirer les meilleurs potentiels.
+          </p>
+
+          <Cards
+            alternative
+            data={[
+              {
+                imageSrc: "/img/Candidats/egalite_femmes_hommes.webp",
+                title: "Égalité professionnelle",
+                href: "/a-propos/Environnement-social-&-gouvernance",
+                desc: "Circet France est attachée à l'égalité professionnelle entre individus et exclut toute forme de discrimination envers les minorités quelles qu'elles soient. En 2022, l'entreprise obtient un score de 87/100 à l'index de l'égalité professionnelle femmes-hommes.",
+              },
+              {
+                imageSrc: "/img/Candidats/engagement solidaire.webp",
+                title: "Engagement solidaire",
+                href: "/a-propos/Environnement-social-&-gouvernance",
+                desc: "Avec le programme de mécénat de compétences Circet4communities, Circet France donne à ses équipes l'opportunité de se mobiliser pour la ou les causes qui leur tiennent à cœur en s'engageant dans des missions de volontariat six jours par an sur leur temps de travail.",
+              },
+              {
+                imageSrc: "/img/Candidats/Décarbonisation.webp",
+                title: "Décarbonation",
+                href: "/a-propos/Environnement-social-&-gouvernance",
+                desc: "Flotte de véhicules électriques, achats responsables, digitalisation des processus, optimisation des tournées des techniciens, gestion durable des déchets, audits chantier... pour produire consciencieusement tout en limitant l'impact environnemental.",
+              },
+            ]}
+            colors={{
+              title: "text-primary hover:text-accent",
+              desc: "text-primary",
+            }}
+          />
+
+          <div className="flex items-center text-primary underline text-sm font-semibold gap-3 justify-center mt-8 hover:no-underline">
+            <img src="/img/Candidats/carousel-right-arrow.webp" />
+            <Link href={"/a-propos/Environnement-social-&-gouvernance"}>
+              En savoir plus sur nos démarches ESG
+            </Link>
+          </div>
+        </Section>
+
+        <Section xs={"mt-16"}>
+          <h3 className="text-center text-3xl font-semibold mb-11">
+            Parmi nos clients
+          </h3>
+
+          <Flex
+            xs={"flex-wrap justify-center gap-8 w-1/2 mx-auto"}
+            lg={"lg:w-full"}
+          >
+            <img src="/img/Candidats/Logo_Orange.webp" alt="Logo Orange" />
+            <img src="/img/Candidats/Logo_Free.webp" alt="Logo Free" />
+            <img src="/img/Candidats/Logo_SFR.webp" alt="Logo SFR" />
+            <img src="/img/Candidats/Logo_Bouygues.webp" alt="Logo Bouygues" />
+            <img
+              src="/img/Candidats/Logo_altitude_infrastructure.webp"
+              alt="Logo altitude infrastructure"
+            />
+            <img src="/img/Candidats/Logo_tdf.webp" alt="Logo tdf" />
+          </Flex>
+        </Section>
       </article>
     </>
   );
