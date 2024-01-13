@@ -287,10 +287,10 @@ const Candidats: React.FC = () => {
               lg={"lg:w-full"}
             >
               <img src="/img/Candidats/Logo_Orange.webp" alt="Logo Orange" />
-              <img src="/img/Candidats/Logo_Free.webp" alt="Logo Free" />
+              <img src="/img/Candidats/Logo_free.webp" alt="Logo Free" />
               <img src="/img/Candidats/Logo_SFR.webp" alt="Logo SFR" />
               <img
-                src="/img/Candidats/Logo_Bouygues.webp"
+                src="/img/Candidats/Logo_bouygues.webp"
                 alt="Logo Bouygues"
               />
               <img
