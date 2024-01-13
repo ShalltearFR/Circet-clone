@@ -3,6 +3,7 @@ import "./globals.css";
 import Nav from "@/components/Nav/NavBar";
 import { Body } from "@/components/StyledElement/StyledElement";
 import PathName from "@/components/PathName/PathName";
+import FooterBar from "@/components/FooterBar/FooterBar";
 
 export default function RootLayout({
   children,
@@ -11,10 +12,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="fr">
-      <Body xs="bg-background mx-auto" sm="sm:w-full" xl="xl:w-[1240px]">
+      <Body xs="bg-background">
         <Nav />
         <PathName />
         <main className="text-primary">{children}</main>
+        <FooterBar />
       </Body>
     </html>
   );
