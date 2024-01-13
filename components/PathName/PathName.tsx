@@ -1,7 +1,8 @@
 "use client";
 import { usePathname } from "next/navigation";
+import { Div } from "../StyledElement/StyledElement";
 
-const PathName = () => {
+const PathName: React.FC = () => {
   const pathname = usePathname()
     .replaceAll("-", " ")
     .split("/")
@@ -9,7 +10,10 @@ const PathName = () => {
     .join(" > ");
 
   return (
-    <div className="ml-[35px] mt-[33px] mb-[10px] text-white text-xs">{`Accueil${pathname}`}</div>
+    <Div
+      xs="ml-[35px] mt-[33px] mb-[10px] text-white text-xs"
+      xl="xl:w-[1240px] xl:mx-auto xl:pl-8"
+    >{`Accueil${pathname}`}</Div>
   );
 };
 

@@ -54,6 +54,8 @@ const H1 = createStyledElementComponent("h1");
 const H2 = createStyledElementComponent("h2");
 const H3 = createStyledElementComponent("h3");
 const P = createStyledElementComponent("p");
+const Ul = createStyledElementComponent("ul");
+const Footer = createStyledElementComponent("footer");
 
-export { Body, Div, Span, Header, Nav, Section, H1, H2, H3, P };
+export { Body, Div, Span, Header, Nav, Section, H1, H2, H3, P, Ul,  Footer };
 export type { StyledElementProps };

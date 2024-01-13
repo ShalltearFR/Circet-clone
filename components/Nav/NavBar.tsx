@@ -98,7 +98,7 @@ const NavBar: React.FC = () => {
             src="/img/Nav/hamburger.webp"
           />
         </button>
-        <Div xs="w-[115px] h-[20px] gap-3 items-center hidden" xl="xl:flex">
+        <Div xs="w-[115px] h-[20px] gap-3 items-center hidden" lg="lg:flex">
           <img className="w-[14px] h-[14px]" src="/img/Nav/mail.webp" />
           <span className="text-primary text-sm">Contact</span>
         </Div>
