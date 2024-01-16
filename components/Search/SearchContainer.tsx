@@ -8,9 +8,7 @@ import activities from "@/annexes/activitiesList.json";
 import contracts from "@/annexes/contractsList.json";
 import regions from "@/annexes/regionsList.json";
 
-interface SearchContainerProps {}
-
-const SearchContainer: React.FC<SearchContainerProps> = ({}) => {
+const SearchContainer: React.FC = () => {
   const [searchTxt, setSearchTxt] = useState<string>("");
   const [isAdvancedSearchHidden, setIsAdvancedSearchHidden] =
     useState<boolean>(true);
@@ -38,9 +36,7 @@ const SearchContainer: React.FC<SearchContainerProps> = ({}) => {
           </Div>
         </label>
         <Div
-          xs={
-            "text-center mx-3 my-3 mb-5 border border-tertiary border-dashed"
-          }
+          xs={"text-center mx-3 my-3 mb-5 border border-tertiary border-dashed"}
           md={"md:w-3/4 md:mx-auto"}
           lg={"lg:w-2/4"}
         >
@@ -86,7 +82,7 @@ const SearchContainer: React.FC<SearchContainerProps> = ({}) => {
 
         <div className="px-4 text-center mb-5">
           <Button
-            imgSrc="/img/Candidats/right-arrow-black.svg"
+            imgSrc="/img/Arrows/black-arrow.svg"
             background={"bg-accent"}
             textColor={"text-secondary"}
           >

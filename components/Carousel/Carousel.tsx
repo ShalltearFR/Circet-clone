@@ -27,7 +27,7 @@ const Carousel: React.FC<CarouselProps> = ({ data }) => {
           className="!absolute top-2/4 left-4 -translate-y-2/4"
         >
           <img
-            src="/img/Candidats/carousel-right-arrow.webp"
+            src="/img/Arrows/orange-arrow.webp"
             className="rotate-180"
           />
         </IconButton>
@@ -41,7 +41,7 @@ const Carousel: React.FC<CarouselProps> = ({ data }) => {
           onClick={handleNext}
           className="!absolute top-2/4 !right-4 -translate-y-2/4"
         >
-          <img src="/img/Candidats/carousel-right-arrow.webp" />
+          <img src="/img/Arrows/orange-arrow.webp" />
         </IconButton>
       )}
     >

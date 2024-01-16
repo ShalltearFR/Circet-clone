@@ -13,7 +13,9 @@ const PathName: React.FC = () => {
     <Div
       xs="ml-[35px] mt-[33px] mb-[10px] text-white text-xs"
       xl="xl:w-[1240px] xl:mx-auto xl:pl-8"
-    >{`Accueil${pathname}`}</Div>
+    >
+      {`Accueil${pathname}`}
+    </Div>
   );
 };
 

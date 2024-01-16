@@ -8,6 +8,7 @@ import Flex from "@/components/StyledElement/Flex";
 import { Div, Section } from "@/components/StyledElement/StyledElement";
 import SearchContainer from "@/components/Search/SearchContainer";
 import Carousel from "@/components/Carousel/Carousel";
+import ArrowLink from "@/components/ArrowLink/ArrowLink";
 
 export const metadata: Metadata = {
   title: "Carrière - Circet Clone",
@@ -52,18 +53,13 @@ const Candidats: React.FC = () => {
                 },
               ]}
             />
-
-            <p className="mt-12 text-center text-secondary underline underline-offset-2 hover:no-underline">
-              <Link href={"/a-propos"} className="py-2 px-6">
-                <img
-                  src="/img/Candidats/right-arrow.webp"
-                  className="inline mr-2"
-                />
-                <span className="align-middle text-sm font-bold">
-                  En savoir plus sur Circet France
-                </span>
-              </Link>
-            </p>
+            <ArrowLink
+              arrow="orange"
+              textColor="text-secondary"
+              href="/a-propos"
+            >
+              En savoir plus sur Circet France
+            </ArrowLink>
           </Section>
 
           <Section xs="mt-16 px-8" xl="xl:px-36">
@@ -173,7 +169,7 @@ const Candidats: React.FC = () => {
                   <span className="bg-accent text-sm font-bold px-6 py-3 m-auto text-center w-fit rounded-full">
                     En savoir plus sur la formation
                     <img
-                      src="/img/Candidats/right-arrow-white.svg"
+                      src="/img/Arrows/white-arrow.svg"
                       className="inline ml-1"
                     />
                   </span>
@@ -208,12 +204,13 @@ const Candidats: React.FC = () => {
                   },
                 ]}
               />
-              <div className="flex items-center underline text-sm font-semibold gap-3 justify-center mt-8 hover:no-underline">
-                <img src="/img/Candidats/carousel-right-arrow.webp" />
-                <Link href={"/candidats/offres"}>
-                  Voir plus d'offres d'emploi
-                </Link>
-              </div>
+              <ArrowLink
+                arrow="white"
+                textColor="text-primary"
+                href="/candidats/offres"
+              >
+                Voir plus d'offres d'emploi
+              </ArrowLink>
             </div>
           </Section>
 
@@ -224,12 +221,13 @@ const Candidats: React.FC = () => {
             <div className="text-accent text-xl font-semibold w-4/5 mx-auto">
               Aucune de nos offres actuelles ne correspond à votre recherche ?
             </div>
-            <div className="flex items-center text-secondary underline text-sm font-semibold gap-3 justify-center mt-8 hover:no-underline">
-              <img src="/img/Candidats/right-arrow-black.svg" />
-              <Link href={"/candidats/Candidature-spontanee"}>
-                Envoyer votre candidature spontanée
-              </Link>
-            </div>
+            <ArrowLink
+              arrow="orange"
+              textColor="text-secondary"
+              href="/candidats/Candidature-spontanee"
+            >
+              Envoyer votre candidature spontanée
+            </ArrowLink>
           </Section>
 
           <Section xs={"mt-16 text-center px-5"}>
@@ -269,12 +267,13 @@ const Candidats: React.FC = () => {
               }}
             />
 
-            <div className="flex items-center text-primary underline text-sm font-semibold gap-3 justify-center mt-8 hover:no-underline">
-              <img src="/img/Candidats/carousel-right-arrow.webp" />
-              <Link href={"/a-propos/Environnement-social-&-gouvernance"}>
-                En savoir plus sur nos démarches ESG
-              </Link>
-            </div>
+            <ArrowLink
+              arrow="white"
+              textColor="text-primary"
+              href="/a-propos/Environnement-social-&-gouvernance"
+            >
+              En savoir plus sur nos démarches ESG
+            </ArrowLink>
           </Section>
 
           <Section xs={"mt-16"}>
@@ -313,12 +312,13 @@ const Candidats: React.FC = () => {
           />
         </Link>
 
-        <div className="flex items-center text-secondary underline text-sm font-semibold gap-3 justify-center mt-8 hover:no-underline">
-          <img src="/img/Candidats/right-arrow.webp" />
-          <Link href={"/a-propos/implantations"}>
-            Ouvrir la carte dynamique de nos implantations
-          </Link>
-        </div>
+        <ArrowLink
+          arrow="black"
+          textColor="text-secondary"
+          href="/a-propos/implantations"
+        >
+          Ouvrir la carte dynamique de nos implantations
+        </ArrowLink>
       </Section>
     </>
   );
