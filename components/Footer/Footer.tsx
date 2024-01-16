@@ -1,10 +1,10 @@
 import Link from "next/link";
 import Flex from "../StyledElement/Flex";
-import { Div, Footer, P, Ul } from "../StyledElement/StyledElement";
+import { Div, P, Ul } from "../StyledElement/StyledElement";
 
-const FooterBar: React.FC = () => {
+const Footer: React.FC = () => {
   return (
-    <Footer xs={"mt-16 mx-auto py-12 text-tertiary max-w-7xl"}>
+    <footer className={"mx-auto py-12 text-tertiary max-w-7xl"}>
       <Div
         md={
           "md:flex md:flex-shrink-0 md:mx-5 md:border-b md:border-blue-gray-900"
@@ -48,8 +48,8 @@ const FooterBar: React.FC = () => {
           © 2024 Circet. Tous droits réservés.
         </P>
       </Div>
-    </Footer>
+    </footer>
   );
 };
 
-export default FooterBar;
+export default Footer;

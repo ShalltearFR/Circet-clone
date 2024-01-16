@@ -3,7 +3,7 @@ import "./globals.css";
 import Nav from "@/components/Nav/NavBar";
 import { Body } from "@/components/StyledElement/StyledElement";
 import PathName from "@/components/PathName/PathName";
-import FooterBar from "@/components/FooterBar/FooterBar";
+import FooterBar from "@/components/Footer/Footer";
 
 export default function RootLayout({
   children,

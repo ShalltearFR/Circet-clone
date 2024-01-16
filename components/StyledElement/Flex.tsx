@@ -16,6 +16,8 @@ type FlexProps = {
   flexAuto?: boolean;
   flexNone?: boolean;
   style?: React.CSSProperties;
+  onMouseEnter?: () => void;
+  onMouseLeave?: () => void;
 } & StyledElementProps;
 
 
@@ -40,6 +42,8 @@ const Flex: React.FC<FlexProps> = ({
   lg,
   xl,
   children,
+  onMouseEnter,
+  onMouseLeave
 }) => {
   const classNames = `${xs ?? ""} ${sm ?? ""} ${md ?? ""} ${lg ?? ""} ${xl ?? ""}`;
 
@@ -57,6 +61,8 @@ const Flex: React.FC<FlexProps> = ({
         flexNone ? " flex-none" : ""
       } ${classNames}
     `}
+    onMouseEnter={onMouseEnter}
+      onMouseLeave={onMouseLeave}
     >
       {children}
     </div>

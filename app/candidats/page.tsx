@@ -9,6 +9,7 @@ import { Div, Section } from "@/components/StyledElement/StyledElement";
 import SearchContainer from "@/components/Search/SearchContainer";
 import Carousel from "@/components/Carousel/Carousel";
 import ArrowLink from "@/components/ArrowLink/ArrowLink";
+import StickyButton from "@/components/StickyButton/StickyButton";
 
 export const metadata: Metadata = {
   title: "Carrière - Circet Clone",
@@ -320,6 +321,8 @@ const Candidats: React.FC = () => {
           Ouvrir la carte dynamique de nos implantations
         </ArrowLink>
       </Section>
+
+      <StickyButton href="/offres-demploi">Postuler</StickyButton>
     </>
   );
 };
