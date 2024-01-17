@@ -18,8 +18,8 @@ type FlexProps = {
   style?: React.CSSProperties;
   onMouseEnter?: () => void;
   onMouseLeave?: () => void;
+  onClick?: (event: React.MouseEvent<HTMLElement, MouseEvent>) => void;
 } & StyledElementProps;
-
 
 const Flex: React.FC<FlexProps> = ({
   column,
@@ -43,9 +43,12 @@ const Flex: React.FC<FlexProps> = ({
   xl,
   children,
   onMouseEnter,
-  onMouseLeave
+  onMouseLeave,
+  onClick,
 }) => {
-  const classNames = `${xs ?? ""} ${sm ?? ""} ${md ?? ""} ${lg ?? ""} ${xl ?? ""}`;
+  const classNames = `${xs ?? ""} ${sm ?? ""} ${md ?? ""} ${lg ?? ""} ${
+    xl ?? ""
+  }`;
 
   return (
     <div
@@ -61,8 +64,9 @@ const Flex: React.FC<FlexProps> = ({
         flexNone ? " flex-none" : ""
       } ${classNames}
     `}
-    onMouseEnter={onMouseEnter}
+      onMouseEnter={onMouseEnter}
       onMouseLeave={onMouseLeave}
+      onClick={onClick}
     >
       {children}
     </div>

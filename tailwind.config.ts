@@ -25,16 +25,17 @@ const config: Config = withMT({
         "second-background": "#ebebec", //blanc-gris
         "third-background": "#1c1c1c", //Noir-gris
         "fourth-background": "#222", //Dark gray
+        hamburger: "#1a171b",
       },
       borderRadius: {
-        'header': '0 15rem 15rem 0',
-      }
+        header: "0 15rem 15rem 0",
+      },
     },
     boxShadow: {
-      'carousel': '0.8rem 0.4rem 0 #f17d00',
-    }
+      carousel: "0.8rem 0.4rem 0 #f17d00",
+    },
   },
-  plugins: []
+  plugins: [],
 });
 
 export default config;

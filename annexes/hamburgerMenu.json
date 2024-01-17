@@ -1,0 +1,66 @@
+{
+  "candidats": [
+    {
+      "name": "Métiers des réseaux télécoms",
+      "href": "/candidats/reseaux-telecoms"
+    },
+    {
+      "name": "Métiers de la transition énergétique",
+      "href": "/candidats/transition-energetique"
+    },
+    {
+      "name": "Fonctions support",
+      "href": "/candidats/fonctions-support"
+    },
+    {
+      "name": "Formation",
+      "href": "/candidats/formation"
+    },
+    {
+      "name": "Offres d'emploi",
+      "href": "/offres"
+    },
+    {
+      "name": "Candidature spontanée",
+      "href": "/candidatures-spontanee"
+    }
+  ],
+  "clients": [
+    {
+      "name": "Domaines d'activité",
+      "href": "/clients/domaines"
+    }
+  ],
+  "fournisseurs": [
+    {
+      "name": "Référencement",
+      "href": "/fournisseurs/referencement"
+    }
+  ],
+  "aPropos": [
+    {
+      "name": "Environnement, Social & Gouvernance",
+      "href": "/a-propos/environnement-social-&-gouvernance"
+    },
+    {
+      "name": "Circet France en chiffres",
+      "href": "/a-propos/circet-france-en-chiffres"
+    },
+    {
+      "name": "Certifications",
+      "href": "/a-propos/certifications"
+    },
+    {
+      "name": "Historique",
+      "href": "/a-propos/historique"
+    },
+    {
+      "name": "Filiales",
+      "href": "/a-propos/historique",
+      "sub": {
+        "name": "Circet Pylône",
+        "href": "/a-propos/circet-pylone"
+      }
+    }
+  ]
+}
