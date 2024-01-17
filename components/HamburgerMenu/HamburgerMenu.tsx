@@ -5,6 +5,8 @@ import { Div, Nav } from "../StyledElement/StyledElement";
 import hamburgerData from "@/annexes/hamburgerMenu.json";
 import Flex from "../StyledElement/Flex";
 import { usePathname } from "next/navigation";
+import { ChangeEvent, KeyboardEvent, useState } from "react";
+import { useRouter } from "next/navigation";
 
 interface HamburgerMenuProps {
   isOpen: boolean;
@@ -16,6 +18,8 @@ const HamburgerMenu: React.FC<HamburgerMenuProps> = ({
   handleMenu,
 }) => {
   const currentRoute = usePathname();
+  const router = useRouter();
+  const [textInput, setTextInput] = useState<string>("");
 
   const pClassName = `text-xl text-accent`;
   const liClassName = `py-1`;
@@ -25,6 +29,17 @@ const HamburgerMenu: React.FC<HamburgerMenuProps> = ({
       return " underline underline-offset-4";
     }
     return "";
+  };
+
+  const handleKeyDown = (event: KeyboardEvent<HTMLInputElement>) => {
+    if (event.key === "Enter") {
+      handleMenu(event as any);
+      router?.push(`/recherche?q=${textInput}`);
+    }
+  };
+
+  const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
+    setTextInput(event.target.value);
   };
 
   return (
@@ -43,10 +58,21 @@ const HamburgerMenu: React.FC<HamburgerMenuProps> = ({
           className="ml-auto mt-5"
           onClick={handleMenu}
         />
-        <div>
+        <div className="relative">
           <input
             className="text-secondary placeholder:text-secondary placeholder:italic h-12 w-full rounded-full px-5 py-3 mt-8"
+            value={textInput}
+            onKeyDown={handleKeyDown}
+            onChange={handleChange}
             placeholder="Métier, mots clés, activités..."
+          />
+          <img
+            src="/img/Arrows/arrow-input.webp"
+            className="absolute left-auto right-5 bottom-[18px]"
+            onClick={(e) => {
+              handleMenu(e);
+              router?.push(`/recherche?q=${textInput}`);
+            }}
           />
         </div>
         <Flex column xs={"gap-6 mt-10"} onClick={handleMenu}>
@@ -56,7 +82,10 @@ const HamburgerMenu: React.FC<HamburgerMenuProps> = ({
             </p>
             <ul>
               {hamburgerData.candidats.map((el) => (
-                <li key={crypto.randomUUID()} className={liClassName + setActiveClassName(el.href)}>
+                <li
+                  key={crypto.randomUUID()}
+                  className={liClassName + setActiveClassName(el.href)}
+                >
                   <Link href={el.href}>{el.name}</Link>
                 </li>
               ))}
@@ -68,7 +97,10 @@ const HamburgerMenu: React.FC<HamburgerMenuProps> = ({
             </p>
             <ul>
               {hamburgerData.clients.map((el) => (
-                <li key={crypto.randomUUID()} className={liClassName + setActiveClassName(el.href)}>
+                <li
+                  key={crypto.randomUUID()}
+                  className={liClassName + setActiveClassName(el.href)}
+                >
                   <Link href={el.href}>{el.name}</Link>
                 </li>
               ))}
@@ -80,7 +112,10 @@ const HamburgerMenu: React.FC<HamburgerMenuProps> = ({
             </p>
             <ul>
               {hamburgerData.fournisseurs.map((el) => (
-                <li key={crypto.randomUUID()} className={liClassName + setActiveClassName(el.href)}>
+                <li
+                  key={crypto.randomUUID()}
+                  className={liClassName + setActiveClassName(el.href)}
+                >
                   <Link href={el.href}>{el.name}</Link>
                 </li>
               ))}
@@ -92,7 +127,10 @@ const HamburgerMenu: React.FC<HamburgerMenuProps> = ({
             </p>
             <ul>
               {hamburgerData.aPropos.map((el) => (
-                <li key={crypto.randomUUID()} className={liClassName + setActiveClassName(el.href)}>
+                <li
+                  key={crypto.randomUUID()}
+                  className={liClassName + setActiveClassName(el.href)}
+                >
                   <Link href={el.href}>{el.name}</Link>
                   {el.sub && (
                     <p>

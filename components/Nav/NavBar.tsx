@@ -11,8 +11,7 @@ const NavBar: React.FC = () => {
   const pathname = usePathname();
   const [isActiveHambuger, setIsActiveHambuger] = useState<boolean>(false);
 
-  const handleHamburger = (event: React.MouseEvent<HTMLElement>) => {
-    event.preventDefault();
+  const handleHamburger = (e: any) => {
     setIsActiveHambuger(!isActiveHambuger);
   };
 
